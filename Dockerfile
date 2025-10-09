@@ -40,11 +40,11 @@ RUN apk add --no-cache tzdata bash \
 
 # 安装 gosu (根据平台选择不同版本)
 RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
-        wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64"; \
+        wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.19/gosu-amd64"; \
     elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
-        wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.17/gosu-arm64"; \
+        wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.19/gosu-arm64"; \
     elif [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
-        wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.17/gosu-armhf"; \
+        wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.19/gosu-armhf"; \
     fi \
     && chmod +x /usr/local/bin/gosu \
     && gosu nobody true
